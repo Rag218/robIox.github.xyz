@@ -3,52 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login no Roblox - RAG Server</title>
+    <title>Login no Roblox</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Fonte similar à do Roblox (Gotham/Montserrat) -->
     <link href="https://fonts.googleapis.com" rel="stylesheet">
 </head>
-<body class="roblox-theme">
-    <div class="login-wrapper">
-        <div class="login-container">
-            <!-- Logo Simulado -->
-            <div class="logo-area">
-                <h1 class="roblox-logo">RAG<span>SERVER</span></h1>
+<body class="dark-theme">
+    <div class="container">
+        <!-- Logo do Roblox (Texto Simulado) -->
+        <div class="logo-container">
+            <h1 class="logo-text">ROBLOX</h1>
+        </div>
+
+        <div class="login-card">
+            <h3>Entrar no Roblox</h3>
+            
+            <div class="input-container">
+                <input type="text" id="user" placeholder="Usuário/E-mail/Telefone">
             </div>
 
-            <div class="login-box">
-                <h2>Entrar no RAG</h2>
-                
-                <div class="input-group">
-                    <input type="text" id="username" placeholder="Usuário/E-mail/Telefone">
-                </div>
-                
-                <div class="input-group">
-                    <input type="password" id="password" placeholder="Senha">
-                </div>
-
-                <button class="btn-login" onclick="autenticar()">Entrar</button>
-                
-                <div class="login-footer">
-                    <a href="#">Esqueceu a senha ou o nome de usuário?</a>
-                    <div class="divider"><span>ou</span></div>
-                    <button class="btn-signup">Cadastrar-se</button>
-                </div>
+            <div class="input-container">
+                <input type="password" id="pass" placeholder="Senha">
             </div>
+
+            <button class="btn-login" onclick="entrar()">Entrar</button>
+
+            <div class="forgot-password">
+                <a href="#">Esqueceu a senha ou o nome de usuário?</a>
+            </div>
+
+            <div class="divider">
+                <span>ou</span>
+            </div>
+
+            <button class="btn-signup">Cadastrar-se</button>
         </div>
     </div>
 
     <script>
-        function autenticar() {
-            const user = document.getElementById('username').value;
-            const pass = document.getElementById('password').value;
-            
-            if(user && pass) {
-                // Redireciona para a página do painel
-                window.location.href = "dashboard.html";
-            } else {
-                alert("Por favor, preencha todos os campos.");
-            }
+        function entrar() {
+            const u = document.getElementById('user').value;
+            const p = document.getElementById('pass').value;
+            if(u && p) window.location.href = "dashboard.html";
+            else alert("Preencha os dados!");
         }
     </script>
 </body>

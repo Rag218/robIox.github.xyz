@@ -1,20 +1,40 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
+    <meta charset="UTF-8">
+    <title>RAG Server - Dashboard</title>
     <link rel="stylesheet" href="style.css">
-    <title>Painel do Servidor</title>
+    <link href="https://fonts.googleapis.com" rel="stylesheet">
 </head>
-<body>
-    <nav>Painel RAG Exemplo - Bem-vindo!</nav>
-    <div class="dashboard">
-        <div class="card">
-            <h3>Status do Servidor</h3>
-            <p class="online">ONLINE</p>
+<body class="dark-theme dashboard-body">
+    <!-- Barra de Navegação Roblox Style -->
+    <nav class="roblox-nav">
+        <div class="nav-content">
+            <span class="logo-small">ROBLOX</span>
+            <div class="user-info">Bem-vindo, Jogador</div>
         </div>
-        <div class="card">
-            <h3>Como Funciona</h3>
-            <p>O servidor utiliza sistema de economia real e quests diárias.</p>
+    </nav>
+
+    <main class="panel-container">
+        <div class="server-header">
+            <div class="server-icon">R</div>
+            <div class="server-details">
+                <h1>RAG Exemplo Server</h1>
+                <p>Por @SeuUsuario</p>
+            </div>
+            <button class="btn-play">Jogar</button>
         </div>
-    </div>
+
+        <div class="server-info-grid">
+            <div class="info-card">
+                <h3>Sobre o Servidor</h3>
+                <p>Este é um servidor de exemplo RAG. Aqui você aprende como funciona a integração de sistemas e economia.</p>
+            </div>
+            <div class="info-card">
+                <h3>Status do Sistema</h3>
+                <div class="status-badge online">ONLINE</div>
+            </div>
+        </div>
+    </main>
 </body>
 </html>

@@ -6,35 +6,29 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com" rel="stylesheet">
 </head>
-<body class="dark-theme dashboard-body">
-    <!-- Barra de Navegação Roblox Style -->
-    <nav class="roblox-nav">
+<body class="dash-page">
+    <nav class="navbar">
         <div class="nav-content">
-            <span class="logo-small">ROBLOX</span>
-            <div class="user-info">Bem-vindo, Jogador</div>
+            <span class="logo-nav">ROBLOX</span>
+            <input type="text" placeholder="Pesquisar">
         </div>
     </nav>
 
-    <main class="panel-container">
-        <div class="server-header">
-            <div class="server-icon">R</div>
-            <div class="server-details">
+    <div class="main-content">
+        <div class="game-header">
+            <div class="game-thumb">R</div>
+            <div class="game-info">
                 <h1>RAG Exemplo Server</h1>
-                <p>Por @SeuUsuario</p>
+                <p>Por <span>@AdminRAG</span></p>
+                <div class="stats">👍 98% | 👥 1.2k+</div>
             </div>
-            <button class="btn-play">Jogar</button>
+            <button class="play-button">▶</button>
         </div>
 
-        <div class="server-info-grid">
-            <div class="info-card">
-                <h3>Sobre o Servidor</h3>
-                <p>Este é um servidor de exemplo RAG. Aqui você aprende como funciona a integração de sistemas e economia.</p>
-            </div>
-            <div class="info-card">
-                <h3>Status do Sistema</h3>
-                <div class="status-badge online">ONLINE</div>
-            </div>
+        <div class="details">
+            <h2>Sobre o Servidor</h2>
+            <p>O servidor RAG funciona através de uma arquitetura de dados distribuída. Quando você loga, o sistema valida suas credenciais e carrega seu inventário via API.</p>
         </div>
-    </main>
+    </div>
 </body>
 </html>
